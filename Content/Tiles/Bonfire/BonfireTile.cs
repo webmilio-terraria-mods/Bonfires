@@ -95,6 +95,8 @@ public class BonfireTile : ModTile
             Main.NewText("You have lit a bonfire!", Color.Orange);
         }
 
+        modPlayer.SitAtBonfire(tile);
+
         return true;
     }
 

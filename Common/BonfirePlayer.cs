@@ -17,9 +17,8 @@ namespace Bonfires.Common;
 
 internal class BonfirePlayer : ModPlayer
 {
-    private const string
-        WorldBonfiresTagName = "WorldBonfires",
-        WorldBonfiresPrefix = "World_";
+    public delegate void PlayerSitDelegate(BonfirePlayer player, Tile tile);
+    public static event PlayerSitDelegate PlayerSit;
 
     public static BonfirePlayer Get(Player player) => player.GetModPlayer<BonfirePlayer>();
 
@@ -62,6 +61,16 @@ internal class BonfirePlayer : ModPlayer
     public bool HasLitBonfire(Tile bonfire)
     {
         return _local.ContainsKey(bonfire);
+    }
+
+    public void SitAtBonfire(Tile bonfire)
+    {
+        if (!_local.TryGetValue(bonfire, out var id))
+        {
+            return;
+        }
+
+        PlayerSit?.Invoke(this, bonfire);
     }
 
     public void OnDestroyBonfire(Vector2 bonfirePosition)
