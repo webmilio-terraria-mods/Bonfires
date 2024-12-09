@@ -1,0 +1,4 @@
+displayName = Bonfires
+author = Webmilio, HellGoesOn, Moon Bee
+version = 1.0
+modReferences = WebCom@1.0.2.2

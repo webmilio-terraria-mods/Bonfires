@@ -1,0 +1,35 @@
+Tiles.BonfireTile.MapEntry: Bonfire
+
+Items: {
+	BonfireWheelbarrow: {
+		DisplayName: Bonfire Wheelbarrow
+		Tooltip: ""
+	}
+
+	UnlitBonfireItem: {
+		DisplayName: Unlit Bonfire Item
+		Tooltip: ""
+	}
+}
+
+Configs: {
+	BonfiresConfig: {
+		DisplayName: Bonfires Config
+
+		SetSpawnOnMenu: {
+			Label: Set Spawn On Menu
+			Tooltip: Sets the player's spawnpoint upon opening the bonfire menu (right-clicking an active bonfire).
+		}
+
+		LargeWorldBonfireCount: {
+			Label: World Size Bonfire Ratio
+			Tooltip:
+				'''
+				How many bonfires to spawn in a LARGE world (so a world with 8200 x 2400 tiles). 
+				This number is adjusted for other world sizes: the default is 50 for a large world, meaning
+				28 for a medium world (6400x1800) and 12 for a small world (4200x1200).
+				Setting a value too high can stop your world from generating altogether.
+				'''
+		}
+	}
+}
